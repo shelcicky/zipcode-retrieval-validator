@@ -1,0 +1,32 @@
+integration:
+  via-cep:
+    url: https://viacep.com.br
+---
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    url: jdbc:mysql://localhost:3306/shasha_talks?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    allow-public-key-retrieval: true
+    rewrite-batched-statements: true
+    use-ssl: false
+    use-unicode: yes
+    character-encoding: UTF-8
+    use-legacy-datetime-code: true
+    use-timezone: true
+    server-timezone: UTC
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: 'true'
+        use_sql_comments: 'true'
+        show_sql: 'false'
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
