@@ -23,7 +23,7 @@ class ZipControllerTest {
     private static final int SUCCESS_RESPONSE_SIZE = 7;
     private static final String ROOT_JSON_PATH = "$.*";
     private static final String BASE_PATH = "/zipcode/";
-    private static final String INVALID_ZIPCODE_SHORT = "0505000";
+    private static final String INVALID_ZIPCODE_SHORT = "1234567";
     private static final String INVALID_ZIPCODE_LARGE = "123456789";
     private static final String INVALID_ZIPCODE_INVALID_CHAR = "01001*000";
     private static final String NOT_FOUND_ZIPCODE_WITHOUT_DASH = "00000000";

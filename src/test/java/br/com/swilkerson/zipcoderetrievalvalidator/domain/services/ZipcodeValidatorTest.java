@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
         ZipcodeValidator.class
 })
 class ZipcodeValidatorTest {
-    private static final String INVALID_ZIPCODE_SHORT = "0505000";
+    private static final String INVALID_ZIPCODE_SHORT = "1234567";
     private static final String INVALID_ZIPCODE_LARGE = "123456789";
     private static final String INVALID_ZIPCODE_INVALID_CHAR = "01001*000";
     private static final String NULL_ZIPCODE = null;
@@ -24,45 +24,45 @@ class ZipcodeValidatorTest {
     private static final String VALID_ZIPCODE_WITHOUT_DASH = "01001000";
 
     @Autowired
-    private ZipcodeValidator validator;
+    private ZipcodeValidator isValidZipcode;
 
     @Test
     void shouldReturnFalseWithShortZipcode() {
-        assertFalse(validator.execute(INVALID_ZIPCODE_SHORT));
+        assertFalse(isValidZipcode.execute(INVALID_ZIPCODE_SHORT));
     }
 
     @Test
     void shouldReturnFalseWithLargeZipcode() {
-        assertFalse(validator.execute(INVALID_ZIPCODE_LARGE));
+        assertFalse(isValidZipcode.execute(INVALID_ZIPCODE_LARGE));
     }
 
     @Test
     void shouldReturnFalseWithInvalidCharZipcode() {
-        assertFalse(validator.execute(INVALID_ZIPCODE_INVALID_CHAR));
+        assertFalse(isValidZipcode.execute(INVALID_ZIPCODE_INVALID_CHAR));
     }
 
     @Test
     void shouldReturnFalseWithNullZipcode() {
-        assertFalse(validator.execute(NULL_ZIPCODE));
+        assertFalse(isValidZipcode.execute(NULL_ZIPCODE));
     }
 
     @Test
     void shouldReturnTrueWithNotFoundZipcode() {
-        assertTrue(validator.execute(NOT_FOUND_ZIPCODE_WITH_DASH));
+        assertTrue(isValidZipcode.execute(NOT_FOUND_ZIPCODE_WITH_DASH));
     }
 
     @Test
     void shouldReturnTrueWithNotFoundZipcodeNoDash() {
-        assertTrue(validator.execute(NOT_FOUND_ZIPCODE_WITHOUT_DASH));
+        assertTrue(isValidZipcode.execute(NOT_FOUND_ZIPCODE_WITHOUT_DASH));
     }
 
     @Test
     void shouldReturnTrueWithValidZipcode() {
-        assertTrue(validator.execute(VALID_ZIPCODE_WITH_DASH));
+        assertTrue(isValidZipcode.execute(VALID_ZIPCODE_WITH_DASH));
     }
 
     @Test
     void shouldReturnTrueWithValidZipcodeNoDash() {
-        assertTrue(validator.execute(VALID_ZIPCODE_WITHOUT_DASH));
+        assertTrue(isValidZipcode.execute(VALID_ZIPCODE_WITHOUT_DASH));
     }
 }
