@@ -24,6 +24,7 @@ ext {
 	set('googleGuavaVersion', '33.0.0-jre')
 	set('apacheCommonsLang3', '3.14.0')
 	set('mySqlConnector', '9.0.0')
+	set('openAPI', '2.1.0')
 
 	// --- Test Libs
 	set('mockserverVersion', '5.15.0')
@@ -49,6 +50,9 @@ dependencies {
 	// --- Spring Cloud
 	implementation("org.springframework.cloud:spring-cloud-starter")
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+
+	// --- Open API Spring Doc
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openAPI")
 
 	// --- Spring Test
 	testImplementation("org.springframework.cloud:spring-cloud-stream-test-support") {
